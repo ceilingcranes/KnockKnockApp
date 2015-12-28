@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Better App</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="knock"> Knock Knock! </string>
+    <string name="whos_there"> Who\'s there?</string>
+
+    <string name="refresh_button"> Refresh Joke</string>
+    <string name="OK"> Okay </string>
+</resources>
