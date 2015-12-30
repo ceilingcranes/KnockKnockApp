@@ -7,4 +7,9 @@
 
     <string name="refresh_button"> Refresh Joke</string>
     <string name="OK"> Okay </string>
+    <string name="title_activity_create_new_joke">CreateNewJoke</string>
+
+    <string name="enter"> Enter </string>
+    <string name="new_joke"> Enter a new Knock Knock Joke.</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>

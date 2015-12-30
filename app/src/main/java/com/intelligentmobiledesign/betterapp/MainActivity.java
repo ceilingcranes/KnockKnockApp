@@ -2,6 +2,7 @@ package com.intelligentmobiledesign.betterapp;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -28,6 +29,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity  {
     private ArrayList<String[]> jokes=new ArrayList<String[]>();
     private String[] chosenJoke;
+    private int numJoke=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,14 +70,14 @@ public class MainActivity extends AppCompatActivity  {
                                    }
                                }
         );
-       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent=new Intent(MainActivity.this, CreateNewJoke.class);
+                MainActivity.this.startActivity(intent);
             }
-        });*/
+        });
     }
     public void blankWho(View v){
         String joke=chosenJoke[1];
@@ -106,14 +108,17 @@ public class MainActivity extends AppCompatActivity  {
         secondHalf.setText("");
 
     }
-    public void chooseJoke(){
-        int rand=(int)(Math.random()*(jokes.size()-1)); //pick a joke at random
-        chosenJoke = jokes.get(rand);
+    public void chooseJoke(){ //UNDO THIS >:(
+       // int rand=(int)(Math.random()*(jokes.size()-1)); //pick a joke at random
+        if(numJoke==jokes.size()) {
+            numJoke=0;
+        }
+        chosenJoke = jokes.get(numJoke);
+        numJoke++;
     }
     public ArrayList<String[]> createJokeList() throws IOException {
         ArrayList<String[]> jokes=new ArrayList<String[]>();
         InputStream in = null;
-        // try {
         in = this.getResources().openRawResource(R.raw.jokes);
         if (in != null) {
 

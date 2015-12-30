@@ -18,6 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".CreateNewJoke"
+            android:label="@string/title_activity_create_new_joke"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
